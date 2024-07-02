@@ -6,3 +6,7 @@ def calculate(list):
     
 array = np.array(list).reshape(3,3)
 
+#Calculate mean
+mean_axis0=array.mean(axis=0).tolist()
+mean_axis1=array.mean(axis=1).tolist()
+mean_flat=array.mean().tolist()
