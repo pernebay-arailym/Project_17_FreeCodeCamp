@@ -35,3 +35,14 @@ min_flat=array.min().tolist()
 sum_axis0=array.sum(axis=0).tolist()
 sum_axis1=array.sum(axis=1).tolist()
 sum_flat=array.sum().tolist()
+
+calculations = {
+    'mean': [mean_axis0, mean_axis1, mean_flat],
+    'variance': [var_axis0, var_axis1, var_flat],
+    'standard deviation': [std_axis0, std_axis1, std_flat],
+    'max': [max_axis0, max_axis1, max_flat],
+    'min': [min_axis0, min_axis1, min_flat],
+    'sum': [min_axis0, min_axis1, min_flat]
+}
+
+return calculations
