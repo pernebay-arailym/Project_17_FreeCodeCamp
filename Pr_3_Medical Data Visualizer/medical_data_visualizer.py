@@ -30,18 +30,24 @@ def draw_cat_plot():
 
 
     # 8
-    fig = None
+   # fig = None
 
 
-    # 9
+    # 9 Return the figure object for the output
     fig.savefig('catplot.png')
     return fig
 
 
 # 10
 def draw_heat_map():
-    # 11
-    df_heat = None
+    # 11 Clean the data
+    df_heat = df[
+        (df['ap_lo'] <= df['ap_hi']) &
+        (df['height'] >= df['height'].quantile(0.025))&
+        (df['height'] >= df['height'].quantile(0.975))&
+        (df['weight'] >= df['weight'].quantile(0.025))&
+        (df['weight'] >= df['weight'].quantile(0.975))
+    ]
 
     # 12
     corr = None
