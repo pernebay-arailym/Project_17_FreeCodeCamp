@@ -57,13 +57,13 @@ def draw_heat_map():
 
 
 
-    # 14
-    fig, ax = None
+    # 14 Set up the matplotlib figure
+    fig, ax = plt.subplots(figsize=(10, 10))
 
-    # 15
+    # 15 Draw the heatmap
+    sns.heatmap(corr, mask=mask, annot=True, fmt=".1f", ax=ax, cmap='coolwarm')
 
 
-
-    # 16
+    # 16 Return the figure object for the output
     fig.savefig('heatmap.png')
     return fig
