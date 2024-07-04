@@ -13,9 +13,11 @@ df['overweight'] = (df['weight']/((df['height']/100)**2)).apply(lambda x:1 if x 
 df['cholesterol'] = df['cholesterol'].apply(lambda x: 0 if x == 1 else 1)
 df['gluc'] = df['gluc'].apply(lambda x: 0 if x == 1 else 1)
 
-# 4
+# 4 Create a DataFrame for the cat plot
 def draw_cat_plot():
-    # 5
+    df_cat = pd.melt(df, id_vars=['cardio'],
+                     value_vars=['cholesterol', 'gluc', 'smoke', 'alco', 'active', 'overweight'])
+    # 5 Group and reformat the data
     df_cat = None
 
 
