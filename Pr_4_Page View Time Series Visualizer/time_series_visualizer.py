@@ -32,7 +32,11 @@ def draw_bar_plot():
     #Grouping and Calculating Average:
     df_bar = df.groupby(['year', 'month'])['value'].mean().unstack()
 
-    # Draw bar plot
+    # Set up bar plot
+    fig, ax = plt.subplots(figsize=(15,10))
+
+    #Plotting data
+    df_bar.plot(kind='bar', ax=ax)
 
 
 
