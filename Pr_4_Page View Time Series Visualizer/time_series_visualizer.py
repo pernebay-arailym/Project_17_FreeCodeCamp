@@ -37,6 +37,10 @@ def draw_bar_plot():
 
     #Plotting data
     df_bar.plot(kind='bar', ax=ax)
+    #Labels & Title
+    ax.set_title('Monthly Average Page Views per Year')
+    ax.set_xlabel('Years')
+    ax.set_ylabel('Average Page Views')
 
 
 
