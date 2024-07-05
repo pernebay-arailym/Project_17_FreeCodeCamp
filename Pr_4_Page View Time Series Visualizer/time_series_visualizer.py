@@ -66,9 +66,12 @@ def draw_box_plot():
     axes[0].set_xlabel('Year')
     axes[0].set_ylabel('Page Views')
 
-
-
-
+    # Draw the Month-wise Box Plot
+    sns.boxplot(x='month', y='value', data=df_box,
+                order=['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'], ax=axes[1])
+    axes[1].set_title('Month-wise Box Plot (Seasonality)')
+    axes[1].set_xlabel('Month')
+    axes[1].set_ylabel('Page Views')
 
     # Save image and return fig (don't change this part)
     fig.savefig('box_plot.png')
