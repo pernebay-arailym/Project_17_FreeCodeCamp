@@ -42,9 +42,9 @@ def draw_bar_plot():
     ax.set_xlabel('Years')
     ax.set_ylabel('Average Page Views')
 
+    # Create a legend with month labels
 
-
-
+    ax.legend(title='Months', label=['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'])
 
     # Save image and return fig (don't change this part)
     fig.savefig('bar_plot.png')
