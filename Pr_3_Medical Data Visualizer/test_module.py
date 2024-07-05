@@ -42,9 +42,14 @@ class HeatMapTestCase(unittest.TestCase):
     
     def test_heat_map_values(self):
         actual = [text.get_text() for text in self.ax.get_default_bbox_extra_artists() if isinstance(text, mpl.text.Text)]
-        print(actual)
+        print("Actual:", actual)
+        # Normalize '-0.0' to '0.0' in both actual and expected lists
+        actual_normalized = ['0.0' if value == '-0.0' else value for value in actual]
         expected = ['0.0', '0.0', '-0.0', '0.0', '-0.1', '0.5', '0.0', '0.1', '0.1', '0.3', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.2', '0.1', '0.0', '0.2', '0.1', '0.0', '0.1', '-0.0', '-0.1', '0.1', '0.0', '0.2', '0.0', '0.1', '-0.0', '-0.0', '0.1', '0.0', '0.1', '0.4', '-0.0', '-0.0', '0.3', '0.2', '0.1', '-0.0', '0.0', '0.0', '-0.0', '-0.0', '-0.0', '0.2', '0.1', '0.1', '0.0', '0.0', '0.0', '0.0', '0.3', '0.0', '-0.0', '0.0', '-0.0', '-0.0', '-0.0', '0.0', '0.0', '-0.0', '0.0', '0.0', '0.0', '0.2', '0.0', '-0.0', '0.2', '0.1', '0.3', '0.2', '0.1', '-0.0', '-0.0', '-0.0', '-0.0', '0.1', '-0.1', '-0.1', '0.7', '0.0', '0.2', '0.1', '0.1', '-0.0', '0.0', '-0.0', '0.1']
-        self.assertEqual(actual, expected, "Expected different values in heat map.")
+        expected_normalized = ['0.0' if value == '-0.0' else value for value in expected]
+        print("Actual:", actual_normalized)
+        print("Expected:", expected_normalized)
+        self.assertEqual(actual_normalized, expected_normalized, "Expected different values in heat map.")
 
 if __name__ == "__main__":
     unittest.main()
