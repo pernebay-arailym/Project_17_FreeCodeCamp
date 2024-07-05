@@ -26,7 +26,11 @@ def draw_line_plot():
 
 def draw_bar_plot():
     # Copy and modify data for monthly bar plot
-    df_bar = None
+    df['year'] = df.index.year
+    df['month'] = df.index.month
+
+    #Grouping and Calculating Average:
+    df_bar = df.groupby(['year', 'month'])['value'].mean().unstack()
 
     # Draw bar plot
 
