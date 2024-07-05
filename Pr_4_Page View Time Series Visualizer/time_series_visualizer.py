@@ -34,17 +34,15 @@ def draw_bar_plot():
 
     # Set up bar plot
     fig, ax = plt.subplots(figsize=(15,10))
-
-    #Plotting data
     df_bar.plot(kind='bar', ax=ax)
     #Labels & Title
-    ax.set_title('Monthly Average Page Views per Year')
     ax.set_xlabel('Years')
     ax.set_ylabel('Average Page Views')
+    ax.set_title('Monthly Average Page Views per Year')
 
     # Create a legend with month labels
 
-    ax.legend(title='Months', label=['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'])
+    ax.legend(title='Months', labels=['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'])
 
     # Save image and return fig (don't change this part)
     fig.savefig('bar_plot.png')
@@ -76,3 +74,10 @@ def draw_box_plot():
     # Save image and return fig (don't change this part)
     fig.savefig('box_plot.png')
     return fig
+
+# Execute functions to generate and save plots
+draw_line_plot()
+draw_bar_plot()
+draw_box_plot()
+
+
