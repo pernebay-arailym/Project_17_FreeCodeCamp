@@ -15,6 +15,8 @@ def draw_plot():
     year_extended=pd.Series(range(1880, 2051))
     sea_level_pred=slope*year_extended+intercept
 
+    #Plot the first line of the best fit
+    plt.plot(year_extended, sea_level_pred, label='Best Fit Line 1880-2050', color='red')
 
 
     # Create second line of best fit
