@@ -23,6 +23,8 @@ def draw_plot():
     recent_df=df[df['Year']>=2000]
     slope_recent, intercept_recent, r_value_recent, p_value_recent, std_err_recent=linregress(recent_df['Year'], recent_df['CSIRO Adjusted Sea Level'])
 
+    #Predict sea level trough 2050 using the recent trend
+    sea_level_pred_recent=slope_recent*year_extended+intercept_recent
 
 
     # Add labels and title
