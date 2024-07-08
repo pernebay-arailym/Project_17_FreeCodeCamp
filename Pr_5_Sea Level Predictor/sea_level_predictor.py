@@ -9,7 +9,7 @@ def draw_plot():
     plt.scatter(df['Year'], df['CSIRO Adjusted Sea Level'], label='Data Points', color='blue')
 
     # Create first line of best fit
-    slope, intercept, r_value, p_value, std_r = linregress(df['Year'], df['CSIRO Adjusted Sea Level'])
+    slope, intercept, r_value, p_value, std_err = linregress(df['Year'], df['CSIRO Adjusted Sea Level'])
 
     #Predict sea level trough 2050
     year_extended=pd.Series(range(1880, 2051))
@@ -20,6 +20,9 @@ def draw_plot():
 
 
     # Create second line of best fit
+    recent_df=df[df['Year']>=2000]
+    slope_recent, intercept_recent, r_value_recent, p_value_recent, std_err_recent=linregress(recent_df['Year'], recent_df['CSIRO Adjusted Sea Level'])
+
 
 
     # Add labels and title
