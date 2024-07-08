@@ -8,8 +8,9 @@ def draw_plot():
     # Create scatter plot
     plt.scatter(df['Year'], df['CSIRO Adjusted Sea Level'], label='Data Points', color='blue')
 
-
     # Create first line of best fit
+    slope, intercept, r_value, p_value, std_r = linregress(df['Year'], df['CSIRO Adjusted Sea Level'])
+
 
 
     # Create second line of best fit
