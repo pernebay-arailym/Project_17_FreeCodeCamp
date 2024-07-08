@@ -11,6 +11,10 @@ def draw_plot():
     # Create first line of best fit
     slope, intercept, r_value, p_value, std_r = linregress(df['Year'], df['CSIRO Adjusted Sea Level'])
 
+    #Predict sea level trough 2050
+    year_extended=pd.Series(range(1880, 2051))
+    sea_level_pred=slope*year_extended+intercept
+
 
 
     # Create second line of best fit
