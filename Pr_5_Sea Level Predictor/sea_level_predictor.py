@@ -26,6 +26,9 @@ def draw_plot():
     #Predict sea level trough 2050 using the recent trend
     sea_level_pred_recent=slope_recent*year_extended+intercept_recent
 
+    #Plot the second line of the best fit
+    plt.plot(year_extended, sea_level_pred_recent, label='Best Fit Line 2000-2050', color='green')
+
 
     # Add labels and title
 
